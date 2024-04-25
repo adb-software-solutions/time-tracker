@@ -14,11 +14,20 @@ class Contact(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     client = models.ForeignKey("Client", on_delete=models.CASCADE, related_name="contacts")
+    is_primary = models.BooleanField(default=False)
 
     class Meta:
         ordering = ["last_name", "first_name"]
         verbose_name = "Contact"
         verbose_name_plural = "Contacts"
+    
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
+    
+    def save(self, *args, **kwargs):
+        if self.is_primary:
+            self.client.contacts.filter(is_primary=True).update(is_primary=False)
+        super().save(*args, **kwargs)
 
 
 class Client(models.Model):
@@ -36,7 +45,6 @@ class Client(models.Model):
     phone_number = models.CharField(max_length=255, blank=True, null=True)
     email = models.EmailField(max_length=255, blank=True, null=True)
     billing_email = models.EmailField(max_length=255, blank=True, null=True)
-    primary_contact = models.ForeignKey(Contact, on_delete=models.SET_NULL, blank=True, null=True, related_name="primary_contact_for")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -44,6 +52,9 @@ class Client(models.Model):
         ordering = ["company_name"]
         verbose_name = "Client"
         verbose_name_plural = "Clients"
+    
+    def __str__(self):
+        return self.company_name
 
 
 class Project(models.Model):
@@ -61,6 +72,9 @@ class Project(models.Model):
         ordering = ["name"]
         verbose_name = "Project"
         verbose_name_plural = "Projects"
+    
+    def __str__(self):
+        return self.name
 
 
 class TimeEntry(models.Model):
@@ -70,7 +84,6 @@ class TimeEntry(models.Model):
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
     notes = models.TextField(blank=True, null=True)
-    duration = models.DurationField()
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="time_entries")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -80,6 +93,9 @@ class TimeEntry(models.Model):
         verbose_name = "Time Entry"
         verbose_name_plural = "Time Entries"
 
-    def save(self, *args, **kwargs):
-        self.duration = self.end_time - self.start_time
-        super().save(*args, **kwargs)
+    @property
+    def duration(self):
+        return self.end_time - self.start_time
+    
+    def __str__(self):
+        return f"{self.project.name} - {self.start_time.strftime('%Y-%m-%d %H:%M')} for {self.duration.total_seconds() / 3600} hours"
