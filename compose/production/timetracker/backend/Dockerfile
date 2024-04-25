@@ -5,6 +5,7 @@ FROM ubuntu:22.04
 ENV PIP_DISABLE_PIP_VERSION_CHECK 1
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
+ENV RUNNING_IN_DOCKER true
 
 # Install packages
 RUN apt-get update && apt-get upgrade -y \

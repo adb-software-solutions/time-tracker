@@ -15,8 +15,15 @@ import os
 import re
 from pathlib import Path
 from typing import List
+import dotenv
 
 import django_stubs_ext
+
+if os.getenv("RUNNING_IN_DOCKER") == "true":
+    pass
+else:
+    if os.path.exists(".env/.dev"):
+        dotenv.load_dotenv(".env/.dev")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
