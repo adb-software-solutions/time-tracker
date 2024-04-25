@@ -74,7 +74,7 @@ class Project(models.Model):
         verbose_name_plural = "Projects"
     
     def __str__(self):
-        return self.name
+        return f"{self.client.company_name} - {self.name}"
 
 
 class TimeEntry(models.Model):
@@ -98,4 +98,4 @@ class TimeEntry(models.Model):
         return self.end_time - self.start_time
     
     def __str__(self):
-        return f"{self.project.name} - {self.start_time.strftime('%Y-%m-%d %H:%M')} for {self.duration.total_seconds() / 3600} hours"
+        return f"{self.project.client.company_name} - {self.project.name} - {self.start_time.strftime('%Y-%m-%d %H:%M')} for {self.duration.total_seconds() / 3600} hours"
