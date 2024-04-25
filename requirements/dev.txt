@@ -256,6 +256,10 @@ python-dateutil==2.8.2 \
     --hash=sha256:0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86 \
     --hash=sha256:961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9
     # via arrow
+python-dotenv==1.0.1 \
+    --hash=sha256:e324ee90a023d808f1959c46bcbc04446a10ced277783dc6ee09987c37ec10ca \
+    --hash=sha256:f7b63ef50f1b690dddf550d03497b66d609393b40b564ed0d674909a68ebf16a
+    # via -r requirements/common.in
 python-lorem==1.3.0.post1 \
     --hash=sha256:444a2f6d9c1b373119bc20ccad776476fe9b761b531ea50c45b6406e5447fe5f \
     --hash=sha256:6a890b0ae42aea21e90bdd0c2c270843178402b3f2c75a3a454d76db8c597716 \
