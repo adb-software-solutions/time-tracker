@@ -16,9 +16,7 @@ django-ws==1.0.2
 
 # django-sslserver==0.22
 
-# celery==5.3.6
 # redis==5.0.3
-# flower==2.0.1
 
 # gunicorn==21.2.0
 
