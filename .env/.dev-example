@@ -15,15 +15,6 @@ POSTGRES_DB=timetracker
 POSTGRES_USER=timetracker
 POSTGRES_PASSWORD=password
 
-CELERY_BROKER=redis://timetracker-redis-celery:6379/0
-CELERY_BACKEND=redis://timetracker-redis-celery:6379/0
-
 SESSION_BACKEND_URL=redis://timetracker-redis-session:6379/0
 
 CACHE_BACKEND_URL=redis://timetracker-redis-cache:6379/0
-
-FLOWER_AUTH=allowedemail@example.com
-FLOWER_OAUTH2_KEY=oauthkey
-FLOWER_OAUTH2_SECRET=oauthsecret
-FLOWER_OAUTH2_REDIRECT_URI=https://timetracker.co.uk/flower/login
-FLOWER_URL_PREFIX=flower
