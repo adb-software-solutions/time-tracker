@@ -6,6 +6,10 @@ psycopg2==2.9.9
 
 django-ws==1.0.2
 
+redis==5.0.3
+
+django-redis==5.4.0
+
 # typing_extensions==4.11.0
 
 # Pillow==10.3.0
@@ -15,8 +19,6 @@ django-ws==1.0.2
 # requests==2.31.0
 
 # django-sslserver==0.22
-
-# redis==5.0.3
 
 # gunicorn==21.2.0
 
@@ -42,5 +44,5 @@ django-ws==1.0.2
 # django-jet-reboot==1.3.7
 # xmltodict==0.13.0
 # mailchimp-marketing==3.0.80
-# django-redis==5.4.0
+
 # ecdsa==0.18.0
