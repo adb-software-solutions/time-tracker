@@ -70,6 +70,7 @@ else:
 INSTALLED_APPS = [
     "apps.tracker",
     "authentication",
+    "django_countries",
     "corsheaders",
     "django.contrib.admin",
     "django.contrib.auth",
