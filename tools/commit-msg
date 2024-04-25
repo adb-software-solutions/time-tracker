@@ -8,7 +8,7 @@ if grep -q '^[^#]' "$1"; then
 	if
 		! eval "$lint_cmd" <"$1"
 	then
-		echo "WARNING: Your commit message does not match templateprojects's style guide."
+		echo "WARNING: Your commit message does not match time-trackers's style guide."
 	fi
 fi
 

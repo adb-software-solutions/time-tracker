@@ -12,7 +12,7 @@ def restart_celery() -> None:
     worker_name = f"worker_{queue_name}"
     subprocess.call(shlex.split('pkill -f "celery worker"'))
     subprocess.call(
-        shlex.split(f"celery -A templateproject worker -Q {queue_name} -c 2 -l INFO -n {worker_name}")
+        shlex.split(f"celery -A timetracker worker -Q {queue_name} -c 2 -l INFO -n {worker_name}")
     )
 
 

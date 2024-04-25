@@ -1,5 +1,5 @@
 """
-ASGI config for templateproject project.
+ASGI config for timetracker project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django_ws import get_websocket_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "templateproject.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "timetracker.settings")
 
 application = get_websocket_application()

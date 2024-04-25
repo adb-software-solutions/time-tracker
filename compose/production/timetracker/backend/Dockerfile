@@ -28,25 +28,25 @@ COPY ./requirements/dev.txt /requirements.txt
 RUN pip install -r requirements.txt
 
 # Copy project files
-COPY ./compose/dev/templateproject/backend/entrypoint /entrypoint
+COPY ./compose/production/timetracker/backend/entrypoint /entrypoint
 RUN chmod +x /entrypoint
 
-COPY ./compose/dev/templateproject/backend/start /start
+COPY ./compose/production/timetracker/backend/start /start
 RUN chmod +x /start
 
-COPY ./compose/dev/templateproject/celery/worker/start /start-celeryworker
+COPY ./compose/production/timetracker/celery/worker/start /start-celeryworker
 RUN chmod +x /start-celeryworker
 
-COPY ./compose/dev/templateproject/celery/beat/start /start-celerybeat
+COPY ./compose/production/timetracker/celery/beat/start /start-celerybeat
 RUN chmod +x /start-celerybeat
 
-COPY ./compose/dev/templateproject/celery/flower/start /start-flower
+COPY ./compose/production/timetracker/celery/flower/start /start-flower
 RUN chmod +x /start-flower
 
 # Expose port
 EXPOSE 8000
 
 # Set working directory
-WORKDIR /opt/templateproject
+WORKDIR /opt/timetracker
 
 ENTRYPOINT [ "/entrypoint" ]

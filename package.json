@@ -1,5 +1,5 @@
 {
-    "name": "templateproject",
+    "name": "time-tracker",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
@@ -15,14 +15,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/templateorg/templateproject.git"
+        "url": "git+https://github.com/adb-software-solutions/time-tracker.git"
     },
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/templateorg/templateproject/issues"
+        "url": "https://github.com/adb-software-solutions/time-tracker/issues"
     },
-    "homepage": "https://github.com/templateorg/templateproject#readme",
+    "homepage": "https://github.com/adb-software-solutions/time-tracker#readme",
     "devDependencies": {
         "@babel/eslint-parser": "^7.24.1",
         "@typescript-eslint/eslint-plugin": "^7.7.1",

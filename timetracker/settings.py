@@ -61,7 +61,7 @@ else:
 # Application definition
 
 INSTALLED_APPS = [
-    "apps.templateapp",
+    "apps.tracker",
     "authentication",
     "corsheaders",
     "django.contrib.admin",
@@ -96,7 +96,7 @@ AUTHENTICATION_BACKENDS = [
     "authentication.backends.EmailBackend",
 ]
 
-ROOT_URLCONF = "templateproject.urls"
+ROOT_URLCONF = "timetracker.urls"
 
 TEMPLATES = [
     {
@@ -115,8 +115,8 @@ TEMPLATES = [
     },
 ]
 
-# WSGI_APPLICATION = "templateproject.wsgi.application"
-ASGI_APPLICATION = "templateproject.asgi.application"
+# WSGI_APPLICATION = "timetracker.wsgi.application"
+ASGI_APPLICATION = "timetracker.asgi.application"
 
 
 # Database
@@ -125,7 +125,7 @@ ASGI_APPLICATION = "templateproject.asgi.application"
 DATABASES = {
     "default": {
         "ENGINE": os.environ.get("SQL_ENGINE", "django.db.backends.postgresql"),
-        "NAME": os.environ.get("SQL_DATABASE", "templateproject"),
+        "NAME": os.environ.get("SQL_DATABASE", "timetracker"),
         "USER": os.environ.get("SQL_USER", "user"),
         "PASSWORD": os.environ.get("SQL_PASSWORD", "password"),
         "HOST": os.environ.get("SQL_HOST", "localhost"),
@@ -189,7 +189,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 django_stubs_ext.monkeypatch()
 
 SITE_ID = 1
-SITE_NAME = "templateproject"
+SITE_NAME = "timetracker"
 
 X_FRAME_OPTIONS = "SAMEORIGIN"
 

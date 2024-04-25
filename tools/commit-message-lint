@@ -5,7 +5,7 @@
 
 # The rules can be found in /.gitlint
 
-repository="templateorg/templateproject"
+repository="adb-software-solutions/time-tracker"
 
 if [[ "
 $(git remote -v)

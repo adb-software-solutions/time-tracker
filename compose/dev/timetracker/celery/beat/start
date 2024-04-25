@@ -4,4 +4,4 @@ set -o errexit
 set -o nounset
 
 rm -f './celerybeat.pid'
-celery -A templateproject beat -l INFO
+celery -A timetracker beat -l INFO

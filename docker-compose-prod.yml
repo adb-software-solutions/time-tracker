@@ -1,79 +1,79 @@
 services:
-  templateproject-backend:
+  timetracker-backend:
     build:
       context: .
-      dockerfile: ./compose/production/templateproject/backend/Dockerfile
-    image: templateproject-backend
+      dockerfile: ./compose/production/timetracker/backend/Dockerfile
+    image: timetracker-backend
     command: /start
     volumes:
-      - .:/opt/templateproject
+      - .:/opt/timetracker
     env_file:
       - ./.env/.prod
     expose:
       - "8000"
     networks:
-      - templateproject-network
+      - timetracker-network
 
-  templateproject-celery_worker_1:
+  timetracker-celery_worker_1:
     build:
       context: .
-      dockerfile: ./compose/production/templateproject/backend/Dockerfile
-    image: templateproject-celeryworker
+      dockerfile: ./compose/production/timetracker/backend/Dockerfile
+    image: timetracker-celeryworker
     command: /start-celeryworker
     volumes:
-      - .:/opt/templateproject
+      - .:/opt/timetracker
     env_file:
       - ./.env/.prod
     environment:
       - CELERY_QUEUE=initialise_ebay
     networks:
-      - templateproject-network
+      - timetracker-network
 
-  templateproject-celery_beat:
+  timetracker-celery_beat:
     build:
       context: .
-      dockerfile: ./compose/production/templateproject/backend/Dockerfile
-    image: templateproject-celerybeat
+      dockerfile: ./compose/production/timetracker/backend/Dockerfile
+    image: timetracker-celerybeat
     command: /start-celerybeat
     volumes:
-      - .:/opt/templateproject
+      - .:/opt/timetracker
     env_file:
       - ./.env/.prod
     networks:
-      - templateproject-network
+      - timetracker-network
 
-  templateproject-flower:
+  timetracker-flower:
     build:
       context: .
-      dockerfile: ./compose/production/templateproject/backend/Dockerfile
-    image: templateproject-flower
+      dockerfile: ./compose/production/timetracker/backend/Dockerfile
+    image: timetracker-flower
     command: /start-flower
     volumes:
-      - .:/opt/templateproject
+      - .:/opt/timetracker
     env_file:
       - ./.env/.prod
     expose:
       - "5555"
     networks:
-      - templateproject-network
+      - timetracker-network
   
-  templateproject-nginx:
+  timetracker-nginx:
     build:
       context: .
-      dockerfile: ./compose/production/templateproject/nginx/Dockerfile
-    image: templateproject-nginx
+      dockerfile: ./compose/production/timetracker/nginx/Dockerfile
+    image: timetracker-nginx
     volumes:
-      - .:/opt/templateproject
+      - .:/opt/timetracker
     ports:
       - "8080:80"
     depends_on:
-      - templateproject-backend
+      - timetracker-backend
     networks:
-      - templateproject-network
+      - timetracker-network
 
 networks:
-  templateproject-network:
+  timetracker-network:
     driver: bridge
 
 volumes:
-  templateproject_postgres_data:
+  timetracker_postgres_data:

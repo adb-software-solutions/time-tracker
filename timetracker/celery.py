@@ -6,9 +6,9 @@ from celery import Celery
 from django.conf import settings
 
 # Setting the default Django settings module for the 'celery' program.
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "templateproject.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "timetracker.settings")
 
-app = Celery("templateproject")
+app = Celery("timetracker")
 
 # Configuring Celery with settings from the Django settings.
 app.config_from_object("django.conf:settings", namespace="CELERY")
