@@ -29,12 +29,6 @@ services:
       - "5433:5432"
     networks:
       - timetracker-network
-  timetracker-redis-celery:
-    image: redis:7.0.4
-    expose:
-      - "6379"
-    networks:
-      - timetracker-network
   timetracker-redis-cache:
     image: redis:7.0.4
     expose:
@@ -45,61 +39,6 @@ services:
     image: redis:7.0.4
     expose:
       - "6379"
-    networks:
-      - timetracker-network
-  timetracker-celery_worker_1:
-    build:
-      context: .
-      dockerfile: ./compose/dev/timetracker/backend/Dockerfile
-    image: timetracker-celeryworker
-    command: /start-celeryworker
-    volumes:
-      - .:/opt/timetracker
-    env_file:
-      - ./.env/.dev
-    environment:
-      - CELERY_QUEUE=default
-    depends_on:
-      - timetracker-db
-      - timetracker-redis-celery
-      - timetracker-redis-cache
-      - timetracker-redis-session
-    networks:
-      - timetracker-network
-  timetracker-celery_beat:
-    build:
-      context: .
-      dockerfile: ./compose/dev/timetracker/backend/Dockerfile
-    image: timetracker-celerybeat
-    command: /start-celerybeat
-    volumes:
-      - .:/opt/timetracker
-    env_file:
-      - ./.env/.dev
-    depends_on:
-      - timetracker-db
-      - timetracker-redis-celery
-      - timetracker-redis-cache
-      - timetracker-redis-session
-    networks:
-      - timetracker-network
-  timetracker-flower:
-    build:
-      context: .
-      dockerfile: ./compose/dev/timetracker/backend/Dockerfile
-    image: timetracker-flower
-    command: /start-flower
-    volumes:
-      - .:/opt/timetracker
-    env_file:
-      - ./.env/.dev
-    ports:
-      - "5557:5555"
-    depends_on:
-      - timetracker-db
-      - timetracker-redis-celery
-      - timetracker-redis-cache
-      - timetracker-redis-session
     networks:
       - timetracker-network
 

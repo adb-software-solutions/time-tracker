@@ -13,49 +13,6 @@ services:
       - "8000"
     networks:
       - timetracker-network
-
-  timetracker-celery_worker_1:
-    build:
-      context: .
-      dockerfile: ./compose/production/timetracker/backend/Dockerfile
-    image: timetracker-celeryworker
-    command: /start-celeryworker
-    volumes:
-      - .:/opt/timetracker
-    env_file:
-      - ./.env/.prod
-    environment:
-      - CELERY_QUEUE=initialise_ebay
-    networks:
-      - timetracker-network
-
-  timetracker-celery_beat:
-    build:
-      context: .
-      dockerfile: ./compose/production/timetracker/backend/Dockerfile
-    image: timetracker-celerybeat
-    command: /start-celerybeat
-    volumes:
-      - .:/opt/timetracker
-    env_file:
-      - ./.env/.prod
-    networks:
-      - timetracker-network
-
-  timetracker-flower:
-    build:
-      context: .
-      dockerfile: ./compose/production/timetracker/backend/Dockerfile
-    image: timetracker-flower
-    command: /start-flower
-    volumes:
-      - .:/opt/timetracker
-    env_file:
-      - ./.env/.prod
-    expose:
-      - "5555"
-    networks:
-      - timetracker-network
   
   timetracker-nginx:
     build:
