@@ -34,15 +34,6 @@ RUN chmod +x /entrypoint
 COPY ./compose/dev/timetracker/backend/start /start
 RUN chmod +x /start
 
-COPY ./compose/dev/timetracker/celery/worker/start /start-celeryworker
-RUN chmod +x /start-celeryworker
-
-COPY ./compose/dev/timetracker/celery/beat/start /start-celerybeat
-RUN chmod +x /start-celerybeat
-
-COPY ./compose/dev/timetracker/celery/flower/start /start-flower
-RUN chmod +x /start-flower
-
 # Expose port
 EXPOSE 8000
 
