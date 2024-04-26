@@ -6,7 +6,7 @@ psycopg2==2.9.9
 
 django-ws==1.0.2
 
-redis==5.0.3
+redis==5.0.4
 
 django-redis==5.4.0
 
