@@ -10,7 +10,7 @@ redis==5.0.7
 
 django-redis==5.4.0
 
-django-cors-headers==4.3.1
+django-cors-headers==4.4.0
 
 python-dotenv==1.0.1
 
