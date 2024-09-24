@@ -16,13 +16,13 @@ django==5.0.7 \
     # via
     #   django-stubs
     #   django-stubs-ext
-django-stubs==5.0.2 \
-    --hash=sha256:236bc5606e5607cb968f92b648471f9edaa461a774bc013bf9e6bff8730f6bdf \
-    --hash=sha256:cb0c506cb5c54c64612e4a2ee8d6b913c6178560ec168009fe847c09747c304b
+django-stubs==5.1.0 \
+    --hash=sha256:86128c228b65e6c9a85e5dc56eb1c6f41125917dae0e21e6cfecdf1b27e630c5 \
+    --hash=sha256:b98d49a80aa4adf1433a97407102d068de26c739c405431d93faad96dd282c40
     # via -r requirements/mypy.in
-django-stubs-ext==5.0.2 \
-    --hash=sha256:409c62585d7f996cef5c760e6e27ea3ff29f961c943747e67519c837422cad32 \
-    --hash=sha256:8d8efec5a86241266bec94a528fe21258ad90d78c67307f3ae5f36e81de97f12
+django-stubs-ext==5.1.0 \
+    --hash=sha256:a455fc222c90b30b29ad8c53319559f5b54a99b4197205ddbb385aede03b395d \
+    --hash=sha256:ed7d51c0b731651879fc75f331fb0806d98b67bfab464e96e2724db6b46ef926
     # via django-stubs
 mypy==1.11.0 \
     --hash=sha256:0bea2a0e71c2a375c9fa0ede3d98324214d67b3cbbfcbd55ac8f750f85a414e3 \
