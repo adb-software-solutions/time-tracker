@@ -273,9 +273,9 @@ python-lorem==1.3.0.post3 \
     --hash=sha256:c6bf3b89374ab7d231cec4b7855dc86fb7877bb52019394b97a34e71c597e639 \
     --hash=sha256:e88a460eebf2d7e7a58f2d65c4c300a57762f9a74d5637764b9c44a01c8825db
     # via -r requirements/dev.in
-redis==5.0.7 \
-    --hash=sha256:0e479e24da960c690be5d9b96d21f7b918a98c0cf49af3b6fafaa0753f93a0db \
-    --hash=sha256:8f611490b93c8109b50adc317b31bfd84fff31def3475b92e7e80bf39f48175b
+redis==5.1.0 \
+    --hash=sha256:b756df1e4a3858fcc0ef861f3fc53623a96c41e2b1f5304e09e0fe758d333d40 \
+    --hash=sha256:fd4fccba0d7f6aa48c58a78d76ddb4afc698f5da4a2c1d03d916e4fd7ab88cdd
     # via
     #   -r requirements/common.in
     #   django-redis
