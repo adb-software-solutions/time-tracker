@@ -1,12 +1,12 @@
-Django==5.0.7
+Django==5.1.2
 
-tzdata==2024.1
+tzdata==2024.2
 
 psycopg2==2.9.9
 
 django-ws==1.0.2
 
-redis==5.0.7
+redis==5.2.0
 
 django-redis==5.4.0
 
