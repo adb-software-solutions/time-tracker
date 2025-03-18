@@ -66,9 +66,9 @@ sqlparse==0.5.1 \
     --hash=sha256:773dcbf9a5ab44a090f3441e2180efe2560220203dc2f8c0b0fa141e18b505e4 \
     --hash=sha256:bb6b4df465655ef332548e24f08e205afc81b9ab86cb1c45657a7ff173a3a00e
     # via django
-types-psycopg2==2.9.21.20241019 \
-    --hash=sha256:44d091e67732d16a941baae48cd7b53bf91911bc36888652447cf1ef0c1fb3f6 \
-    --hash=sha256:bca89b988d2ebd19bcd08b177d22a877ea8b841decb10ed130afcf39404612fa
+types-psycopg2==2.9.21.20250318 \
+    --hash=sha256:7296d111ad950bbd2fc979a1ab0572acae69047f922280e77db657c00d2c79c0 \
+    --hash=sha256:eb6eac5bfb16adfd5f16b818918b9e26a40ede147e0f2bbffdf53a6ef7025a87
     # via -r requirements/mypy.in
 types-pyyaml==6.0.10 \
     --hash=sha256:18985a382c93fb12187daae6f57ce7787e3651cd590291c907d3e757919689ff \
